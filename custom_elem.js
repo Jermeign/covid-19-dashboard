@@ -32,7 +32,7 @@ card.innerHTML = `
       <p id="leading-locality-label">Leading Locality</p>
       <p id="leading-locality-value"></p>
       <a
-        href="#localities-table-div"
+        href="#localities-table"
         class="btn btn-outline-light btn-block view-details-btn"
         >View Details</a
       >
