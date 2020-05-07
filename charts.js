@@ -53,6 +53,11 @@ function drawConfChart(arr) {
       textStyle: { color: '#888' },
       position: 'bottom',
     },
+    animation: {
+      startup: true,
+      easing: 'inAndOut',
+      duration: 2000
+    },
 
     backgroundColor: { fill: 'transparent' }
   };
@@ -86,6 +91,11 @@ function drawTestingChart(arr) {
     legend: {
       textStyle: { color: '#888' },
       position: 'bottom',
+    },
+    animation: {
+      startup: true,
+      easing: 'inAndOut',
+      duration: 2000
     },
 
     backgroundColor: { fill: 'transparent' }
@@ -121,6 +131,11 @@ function drawChangeChart(arr) {
       position: 'bottom',
       textStyle: { color: '#888' },
     },
+    animation: {
+      startup: true,
+      easing: 'inAndOut',
+      duration: 2000
+    },
 
     backgroundColor: { fill: 'transparent' }
   };
@@ -154,6 +169,11 @@ function drawConvRateChart(arr) {
       minValue: 0,
       format: '# %',
       textStyle: { color: '#888' },
+    },
+    animation: {
+      startup: true,
+      easing: 'inAndOut',
+      duration: 2000
     },
     legend: { position: 'bottom', textStyle: { color: '#888' } },
     backgroundColor: { fill: 'transparent' }
