@@ -7,7 +7,7 @@ card.innerHTML = `
       rel="stylesheet"
     />
 
-  <link rel="stylesheet" href="css/styles-2.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
   <style>
     .card-header, .card-body {
@@ -32,7 +32,7 @@ card.innerHTML = `
       <p id="leading-locality-label">Leading Locality</p>
       <p id="leading-locality-value"></p>
       <a
-        href="#localities-table"
+        href="#state-metrics"
         class="btn btn-outline-light btn-block view-details-btn"
         >View Details</a
       >

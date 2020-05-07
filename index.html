@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Google Charts API -->
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+
     <!-- Fontawesome API -->
 
     <link
@@ -29,7 +36,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/styles-2.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>COVID-19 REPORT</title>
   </head>
   <body>
@@ -195,10 +202,30 @@
           </a>
         </div>
       </div>
-      <div class="box box-4">
+      <div class="box box-4" id="state-metrics">
+        <h2>
+          State Case and Death History Metrics<span
+            class="localities-st-dec"
+          ></span>
+        </h2>
+        <div class="chart-container">
+          <div id="conf-death-chart"></div>
+          <div id="change-chart"></div>
+        </div>
+      </div>
+      <div class="box box-5">
+        <h2>
+          State Testing History Metrics<span class="localities-st-dec"></span>
+        </h2>
+        <div class="chart-container">
+          <div id="testing-chart"></div>
+          <div id="conv-rate-chart"></div>
+        </div>
+      </div>
+      <div class="box box-6">
         <h2 id="localities-div-header">
           State Localities Infection Summary Table
-          <span id="localities-st-dec"></span>
+          <span class="localities-st-dec"></span>
         </h2>
         <div class="table-wrapper-scroll-y my-custom-scrollbar">
           <table
@@ -240,7 +267,8 @@
       integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
       crossorigin="anonymous"
     ></script>
-    <script src="script-2.js"></script>
+    <script src="script.js"></script>
     <script src="custom_elem.js"></script>
+    <script src="charts.js"></script>
   </body>
 </html>
