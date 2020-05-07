@@ -261,6 +261,11 @@ function fillLocalitiesTbl(card, state) {
       <td>${city.deaths}</td>
       <td>${city.deaths_diff}</td>
       <td>${((city.deaths / city.confirmed) * 100).toFixed(2)}%</td>
+      <td><a
+        href="#localities-table"
+        class="btn btn-outline-light"
+        >Details</a
+      ></td>
     `
     tbl_body.appendChild(row);
   })
