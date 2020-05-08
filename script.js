@@ -85,8 +85,13 @@ function addAPIDataToDOM(states) {
   const container_3 = document.getElementById('cd-3');
   const container_4 = document.getElementById('cd-4');
   const container_5 = document.getElementById('cd-5');
+  const container_6 = document.getElementById('cd-6');
+  const container_7 = document.getElementById('cd-7');
+  const container_8 = document.getElementById('cd-8');
+  const container_9 = document.getElementById('cd-9');
+  const container_10 = document.getElementById('cd-10');
 
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 30; i++) {
     if (i < 3) {
       // Create Custom Card Element
 
@@ -198,7 +203,7 @@ function addAPIDataToDOM(states) {
       const button = card.shadowRoot.children[4].children[1].children[6];
       button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
 
-    } else {
+    } else if (i > 11 && i < 15) {
 
       // Create Custom Card Element
 
@@ -225,6 +230,141 @@ function addAPIDataToDOM(states) {
 
       const button = card.shadowRoot.children[4].children[1].children[6];
       button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
+    } else if (i > 14 && i < 18) {
+
+      // Create Custom Card Element
+
+      let card = document.createElement('user-card');
+      // Set Custom Card Attributes
+
+      card.setAttribute("rank", `No. ${i + 1}`);
+      card.setRank();
+      card.setAttribute("name", states[i].region.province);
+      card.setName();
+      card.setAttribute("conf_cases", formatNumber(states[i].confirmed));
+      card.setCases();
+      card.setAttribute("deaths", formatNumber(states[i].deaths));
+      card.setDeaths();
+      card.setAttribute("lead-locale", getLeadingLocale(states[i]));
+      card.setLeadingLocale();
+      card.setLocalitiesTblValues(JSON.stringify(states[i].region.cities.sort((a, b) => b.confirmed - a.confirmed)));
+
+      // Append Card to Deck 6
+
+      container_6.appendChild(card);
+
+      // Add Event Listener to Button
+
+      const button = card.shadowRoot.children[4].children[1].children[6];
+      button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
+    } else if (i > 17 && i < 21) {
+
+      // Create Custom Card Element
+
+      let card = document.createElement('user-card');
+      // Set Custom Card Attributes
+
+      card.setAttribute("rank", `No. ${i + 1}`);
+      card.setRank();
+      card.setAttribute("name", states[i].region.province);
+      card.setName();
+      card.setAttribute("conf_cases", formatNumber(states[i].confirmed));
+      card.setCases();
+      card.setAttribute("deaths", formatNumber(states[i].deaths));
+      card.setDeaths();
+      card.setAttribute("lead-locale", getLeadingLocale(states[i]));
+      card.setLeadingLocale();
+      card.setLocalitiesTblValues(JSON.stringify(states[i].region.cities.sort((a, b) => b.confirmed - a.confirmed)));
+
+      // Append Card to Deck 7
+
+      container_7.appendChild(card);
+
+      // Add Event Listener to Button
+
+      const button = card.shadowRoot.children[4].children[1].children[6];
+      button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
+    } else if (i > 20 && i < 24) {
+
+      // Create Custom Card Element
+
+      let card = document.createElement('user-card');
+      // Set Custom Card Attributes
+
+      card.setAttribute("rank", `No. ${i + 1}`);
+      card.setRank();
+      card.setAttribute("name", states[i].region.province);
+      card.setName();
+      card.setAttribute("conf_cases", formatNumber(states[i].confirmed));
+      card.setCases();
+      card.setAttribute("deaths", formatNumber(states[i].deaths));
+      card.setDeaths();
+      card.setAttribute("lead-locale", getLeadingLocale(states[i]));
+      card.setLeadingLocale();
+      card.setLocalitiesTblValues(JSON.stringify(states[i].region.cities.sort((a, b) => b.confirmed - a.confirmed)));
+
+      // Append Card to Deck 8
+
+      container_8.appendChild(card);
+
+      // Add Event Listener to Button
+
+      const button = card.shadowRoot.children[4].children[1].children[6];
+      button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
+    } else if (i > 23 && i < 27) {
+
+      // Create Custom Card Element
+
+      let card = document.createElement('user-card');
+      // Set Custom Card Attributes
+
+      card.setAttribute("rank", `No. ${i + 1}`);
+      card.setRank();
+      card.setAttribute("name", states[i].region.province);
+      card.setName();
+      card.setAttribute("conf_cases", formatNumber(states[i].confirmed));
+      card.setCases();
+      card.setAttribute("deaths", formatNumber(states[i].deaths));
+      card.setDeaths();
+      card.setAttribute("lead-locale", getLeadingLocale(states[i]));
+      card.setLeadingLocale();
+      card.setLocalitiesTblValues(JSON.stringify(states[i].region.cities.sort((a, b) => b.confirmed - a.confirmed)));
+
+      // Append Card to Deck 9
+
+      container_9.appendChild(card);
+
+      // Add Event Listener to Button
+
+      const button = card.shadowRoot.children[4].children[1].children[6];
+      button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
+    } else {
+
+      // Create Custom Card Element
+
+      let card = document.createElement('user-card');
+      // Set Custom Card Attributes
+
+      card.setAttribute("rank", `No. ${i + 1}`);
+      card.setRank();
+      card.setAttribute("name", states[i].region.province);
+      card.setName();
+      card.setAttribute("conf_cases", formatNumber(states[i].confirmed));
+      card.setCases();
+      card.setAttribute("deaths", formatNumber(states[i].deaths));
+      card.setDeaths();
+      card.setAttribute("lead-locale", getLeadingLocale(states[i]));
+      card.setLeadingLocale();
+      card.setLocalitiesTblValues(JSON.stringify(states[i].region.cities.sort((a, b) => b.confirmed - a.confirmed)));
+
+      // Append Card to Deck 10
+
+      container_10.appendChild(card);
+
+      // Add Event Listener to Button
+
+      const button = card.shadowRoot.children[4].children[1].children[6];
+      button.addEventListener('click', function () { fillLocalitiesTbl(card, states[i]); })
     }
   }
 }
@@ -240,7 +380,7 @@ function getLeadingLocale(state) {
 function fillLocalitiesTbl(card, state) {
   //Update Div Header Text w/ State Name
   Array.from(document.querySelectorAll('.localities-st-dec')).forEach(elem => {
-    elem.innerText = ` (${card.getAttribute('name')});`
+    elem.innerText = ` ${card.getAttribute('rank')} ${card.getAttribute('name')}:`
   })
 
   //Fill Table w/ 'Cities' Data
