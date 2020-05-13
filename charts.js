@@ -1,5 +1,9 @@
 // Set Global Variable(s)
 
+// Responsive Chart Dimensions
+
+chartMeas = window.matchMedia("(max-width: 1366px)").matches ? { width: 510, height: 375 } : { width: 635, height: 400 };
+
 // Get API Data
 
 function getData(usps) {
@@ -19,16 +23,16 @@ google.charts.load('current', { 'packages': ['corechart', 'line', 'bar'] });
 function initCharts(x) {
   getData(x)
     .then(data => {
-      google.charts.setOnLoadCallback(drawConfChart(data));
-      google.charts.setOnLoadCallback(drawTestingChart(data));
-      google.charts.setOnLoadCallback(drawChangeChart(data));
-      google.charts.setOnLoadCallback(drawConvRateChart(data));
+      google.charts.setOnLoadCallback(drawConfChart(data, chartMeas));
+      google.charts.setOnLoadCallback(drawTestingChart(data, chartMeas));
+      google.charts.setOnLoadCallback(drawChangeChart(data, chartMeas));
+      google.charts.setOnLoadCallback(drawConvRateChart(data, chartMeas));
     })
 }
 
 
 
-function drawConfChart(arr) {
+function drawConfChart(arr, meas) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
   data.addColumn('number', 'Conf. Cases');
@@ -45,8 +49,8 @@ function drawConfChart(arr) {
     },
     subtitle: `Refreshed On: ${new Date()}`,
     curveType: 'none',
-    width: 635,
-    height: 400,
+    width: meas.width,
+    height: meas.height,
     hAxis: { textStyle: { color: '#888' }, gridlines: { color: 'transparent' } },
     vAxis: { textStyle: { color: '#888' } },
     legend: {
@@ -67,7 +71,7 @@ function drawConfChart(arr) {
   chart.draw(data, options);
 }
 
-function drawTestingChart(arr) {
+function drawTestingChart(arr, meas) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
   data.addColumn('number', 'Cumulative Tests');
@@ -83,8 +87,8 @@ function drawTestingChart(arr) {
       color: '#888',
       fontSize: 18
     },
-    width: 635,
-    height: 400,
+    width: meas.width,
+    height: meas.height,
     curveType: 'function',
     hAxis: { textStyle: { color: '#888' }, gridlines: { color: 'transparent' } },
     vAxis: { textStyle: { color: '#888' } },
@@ -106,7 +110,7 @@ function drawTestingChart(arr) {
   chart.draw(data, options);
 }
 
-function drawChangeChart(arr) {
+function drawChangeChart(arr, meas) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
   data.addColumn('number', 'Conf. Cases (+ / -)');
@@ -121,8 +125,8 @@ function drawChangeChart(arr) {
       color: '#888',
       fontSize: 18
     },
-    width: 635,
-    height: 400,
+    width: meas.width,
+    height: meas.height,
     subtitle: `Refreshed On: ${new Date()}`,
     curveType: 'function',
     hAxis: { textStyle: { color: '#888' }, gridlines: { color: 'transparent' } },
@@ -145,7 +149,7 @@ function drawChangeChart(arr) {
   chart.draw(data, options);
 }
 
-function drawConvRateChart(arr) {
+function drawConvRateChart(arr, meas) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
   data.addColumn('number', 'Conv. Rate (%)');
@@ -162,8 +166,8 @@ function drawConvRateChart(arr) {
       color: '#888',
       fontSize: 18
     },
-    width: 635,
-    height: 400,
+    width: meas.width,
+    height: meas.height,
     hAxis: { textStyle: { color: '#888' }, gridlines: { color: 'transparent' } },
     vAxis: {
       minValue: 0,
